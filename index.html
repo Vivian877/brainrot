@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Brainrot Generator</title>
+  <style>
+    body {
+      background: linear-gradient(135deg, #4f46e5, #f43f5e);
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      color: #fff;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+      padding: 20px;
+      text-align: center;
+    }
+    h1 {
+      font-size: 3rem;
+      margin-bottom: 0.5rem;
+      text-shadow: 2px 2px #00000088;
+    }
+    #brainrotOutput {
+      margin-top: 20px;
+      font-size: 1.5rem;
+      background: #00000044;
+      padding: 15px 25px;
+      border-radius: 12px;
+      max-width: 600px;
+      min-height: 100px;
+      line-height: 1.4;
+      user-select: none;
+      box-shadow: 0 0 20px #f43f5e;
+    }
+    button {
+      margin-top: 25px;
+      font-size: 1.25rem;
+      padding: 12px 24px;
+      border: none;
+      border-radius: 9999px;
+      background: #f43f5e;
+      color: white;
+      cursor: pointer;
+      box-shadow: 0 0 10px #f43f5e;
+      transition: background-color 0.3s ease;
+    }
+    button:hover {
+      background: #d6336c;
+    }
+  </style>
+</head>
+<body>
+  <h1>Brainrot Generator</h1>
+  <div id="brainrotOutput">Click the button to generate brainrot!</div>
+  <button id="generateBtn">Generate Brainrot</button>
+
+  <script>
+    const brainrotWords = [
+      "Skibidi", "Sigma", "Ohio", "Rizzler", "Slaycore", "NPC energy", "Rot era",
+      "CapCut edits", "No cap", "Skill issue", "POV", "Jump scare", "TikTok",
+      "Benban", "Alphabet saga", "Chat", "Caught in 4K", "Ohio-core", "IRL",
+      "Slopperhouse-core", "Garten of Banban", "Freddy Fazbear", "Ratio", "L",
+      "Sigma grindset", "Trolls", "Viral NPC", "AI deepfakes", "Emo rap battles",
+      "Touch grass", "Delulu solulu", "Slay", "W", "Unalive", "Bozo", "Yeet",
+      "Skrrt", "Gigachad", "Broki", "Bingus", "Fanum tax", "Meemaw", "Yippee",
+      "Wedgiecore", "Goofy ahh", "Cameraman", "Sus", "Clutch", "Based", "Vibe check",
+      "Simp", "Goblincore", "Cringe", "Corecore", "Ok boomer", "Big yikes", "UwU",
+      "Owo", "Rawr", "XD", "Haha", "Lol"
+    ];
+
+    const output = document.getElementById('brainrotOutput');
+    const btn = document.getElementById('generateBtn');
+
+    function getRandomBrainrot() {
+      const count = Math.floor(Math.random() * 8) + 3; // 3 to 10 words
+      let phrase = [];
+      for (let i = 0; i < count; i++) {
+        const word = brainrotWords[Math.floor(Math.random() * brainrotWords.length)];
+        phrase.push(word);
+      }
+      return phrase.join(' ');
+    }
+
+    btn.addEventListener('click', () => {
+      output.textContent = getRandomBrainrot();
+    });
+  </script>
+</body>
+</html>
